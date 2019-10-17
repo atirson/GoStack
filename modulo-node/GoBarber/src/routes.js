@@ -6,7 +6,7 @@ const routes = new Router();
 routes.get('/', async (req, res) => {
   const user = await User.create({
     name: 'Atirson Fabiano',
-    email: 'fabiano.oliveira@gmail.com',
+    email: 'fabiano@gmail.com',
     password_hash: '345325',
   });
 
