@@ -21,7 +21,7 @@ class StudentController {
       where: { email: req.body.email },
     });
 
-    if (studentExists) {
+    if (await studentExists) {
       return res.status(400).json({ error: 'Student already exists.' });
     }
 
