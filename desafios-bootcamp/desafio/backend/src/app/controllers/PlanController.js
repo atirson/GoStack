@@ -23,8 +23,8 @@ class PlanController {
       where: { title: req.body.title },
     });
 
-    if (await planExist) {
-      return res.status(400).json({ error: 'Plan already exists.' })
+    if (!(await planExist)) {
+      return res.status(400).json({ error: 'Plan already exists.' });
     }
 
     const { title, duration, price } = await Plan.create(req.body);
@@ -34,7 +34,6 @@ class PlanController {
       duration,
       price,
     });
-
   }
 
   async update(req, res) {
@@ -50,7 +49,7 @@ class PlanController {
 
     const plan = await Plan.findByPk(req.params.id);
 
-    if (!plan) {
+    if (!(await plan)) {
       return res.status(401).json({ error: 'Plan not exists.' });
     }
 
@@ -66,11 +65,10 @@ class PlanController {
       return res.status(401).json({ error: 'Plan not exists.' });
     }
 
-    const plan = await planExist.destroy();
+    await planExist.destroy();
 
     return res.json({ success: 'Delete with success.' });
   }
-
 }
 
 export default new PlanController();
