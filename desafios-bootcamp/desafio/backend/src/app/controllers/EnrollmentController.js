@@ -28,13 +28,10 @@ class EnrollmentController {
       return res.status(401).json({ error: 'Plan not exists.' });
     }
 
-    const date = await parseISO(req.body.start_date);
-
-    const end_date = await addMonths(
-      new Date(date.getFullYear(), date.getMonth(), date.getDate()),
+    const end_date = addMonths(
+      parseISO(req.body.start_date),
       planExist.duration
     );
-
     const price = (await planExist.duration) * planExist.price;
 
     const { student_id, plan_id, start_date } = await req.body;

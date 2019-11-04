@@ -5,7 +5,7 @@ class Enrollment extends Model {
     super.init(
       {
         start_date: Sequelize.DATE,
-        end_state: Sequelize.DATE,
+        end_date: Sequelize.DATE,
         price: Sequelize.DOUBLE,
       },
       {
