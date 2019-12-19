@@ -5,5 +5,6 @@ if (__DEV__) {
     .useReactNative()
     .connect();
 
+  console.tron = Reactotron;
   tron.clear();
 }
