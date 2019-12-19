@@ -33,7 +33,7 @@ export default class Main extends Component {
     const users = await AsyncStorage.getItem('users');
 
     if (users) {
-      this.setState({ users: JSON.stringify(users) });
+      this.setState({ users: JSON.parse(users) });
     }
   }
 
@@ -97,7 +97,7 @@ export default class Main extends Component {
 
         <List
           data={users}
-          keyExtractor={user => user.node_id}
+          keyExtractor={user => user.login}
           renderItem={({ item }) => (
             <User>
               <Avatar source={{ uri: item.avatar }} />
