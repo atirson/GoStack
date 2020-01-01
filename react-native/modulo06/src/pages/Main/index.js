@@ -87,6 +87,7 @@ export default class Main extends Component {
   };
 
   render() {
+    // eslint-disable-next-line no-unused-vars
     const { users, newUser, loading } = this.state;
     return (
       <Container>
