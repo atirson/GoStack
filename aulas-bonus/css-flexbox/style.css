@@ -98,7 +98,7 @@ header#main-header div.side button {
 }
 
 div.banner {
-  height: 450px;
+  height: 520px;
   width: 100%;
   background: #3bb9e3;
 
@@ -110,7 +110,7 @@ div.banner {
 }
 
 div.banner img {
-  height: 450px;
+  height: 100%;
   width: 100%;
 }
 
@@ -297,6 +297,11 @@ div.wrapper-content .timeline {
   flex: 1;
   background: #fff;
   margin: 10px 20px 0;
+}
+
+.post-img {
+  width: 350px;
+  height: 220px;
 }
 
 div.wrapper-content .timeline nav {
