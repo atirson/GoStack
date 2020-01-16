@@ -72,7 +72,7 @@ class UserContoller {
     await user.update(req.body);
 
     const { id, name, avatar } = await User.findByPk(req.userId, {
-      inclued: [
+      include: [
         {
           model: File,
           as: 'avatar',
@@ -81,12 +81,7 @@ class UserContoller {
       ],
     });
 
-    return res.json({
-      id,
-      name,
-      email,
-      avatar,
-    });
+    return res.json({ id, name, email, avatar });
   }
 }
 
