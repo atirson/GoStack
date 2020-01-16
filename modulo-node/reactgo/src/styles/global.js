@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
@@ -28,7 +30,7 @@ export default createGlobalStyle`
   }
 
   a {
-    text-decoration: 'none';
+    text-decoration: none;
   }
 
   ul {
